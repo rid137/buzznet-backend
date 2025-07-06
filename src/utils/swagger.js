@@ -12,8 +12,8 @@ const options = {
         },
         servers: [
             {
-                url: 'http://localhost:8500/api',
-                description: 'Development server',
+                url: process.env.SWAGGER_SERVER_URL || 'http://localhost:8500/api',
+                description: 'API server',
             },
         ],
         components: {
