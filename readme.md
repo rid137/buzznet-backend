@@ -13,6 +13,11 @@ BuzzNet is a modern social connect platform backend built with Node.js, Express,
 - **☁️ Media Handling**: Cloudinary integration for file uploads
 - **🛡️ Admin Panel**: Content moderation and user management
 
+## 🌐 Live Deployment
+
+- **API Base URL**: [https://buzznet-backend.onrender.com/](https://buzznet-backend.onrender.com/)
+- **Interactive Documentation**: [https://buzznet-backend.onrender.com/docs/](https://buzznet-backend.onrender.com/docs/)
+
 ## 🛠️ Tech Stack
 
 ### Core
