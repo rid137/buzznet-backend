@@ -1,7 +1,7 @@
 require('dotenv').config({ path: `${process.cwd()}/.env` });
 const express = require('express');
 const swaggerDocs = require("../../utils/swagger");
-
+const cors = require('cors');
 
 const routes = require('../../routes');
 const errorHandler = require('../../middlewares/error-handler.middleware');
