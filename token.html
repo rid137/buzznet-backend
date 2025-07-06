@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FCM Token Generator</title>
+    <script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-messaging-compat.js"></script>
+  </head>
+  <body>
+    <h1>FCM Token:</h1>
+    <pre id="token"></pre>
+
+    <script>
+      const firebaseConfig = {
+        apiKey: "AIzaSyBqm2p3E91XSW5HKh5oU7VgwljOBO_IclU",
+        authDomain: "buzznet-42bbc.firebaseapp.com",
+        projectId: "buzznet-42bbc",
+        storageBucket: "buzznet-42bbc.firebasestorage.app",
+        messagingSenderId: "550197848744",
+        appId: "1:550197848744:web:947c5c10e2631dfb77b09d",
+        measurementId: "G-JLJENGKRY4"
+      };
+
+      firebase.initializeApp(firebaseConfig);
+      const messaging = firebase.messaging();
+
+      Notification.requestPermission()
+        .then((permission) => {
+          if (permission === 'granted') {
+            return messaging.getToken({ 
+              vapidKey: "BCzfFwC0-Ms1M_gSfWi3ow1FZDeuI1oUvzsbC60WhccL4He8X1tA-Uz4ltak7ovQ3eYyb98VkBubM4zdegmMiac" 
+            });
+          } else {
+            throw new Error("Notification permission not granted");
+          }
+        })
+        .then((token) => {
+          document.getElementById("token").innerText = token;
+          console.log("FCM Token:", token);
+        })
+        .catch((err) => {
+          console.error("Permission or Token error:", err);
+          document.getElementById("token").innerText = `Error: ${err.message}`;
+        });
+    </script>
+  </body>
+</html>
