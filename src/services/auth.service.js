@@ -184,9 +184,7 @@ class AuthService {
     }
     
     async getCurrentUser({ id }) {
-        const user = await User.findByPk(id, {
-            attributes: { exclude: ['password'] }
-        });
+        const user = await User.findOne({id});
 
         if (!user) {
             throw NotFound("User not found");

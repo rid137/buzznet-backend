@@ -46,7 +46,6 @@ class AuthController {
   }
 
   async getCurrentUser(req, res) {
-    console.log("req user", req.user)
     const id = req.user.id;
     const user = await authService.getCurrentUser(id)
     
